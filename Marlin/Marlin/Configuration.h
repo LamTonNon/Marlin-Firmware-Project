@@ -315,7 +315,7 @@
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
 #define TEMP_SENSOR_4 0
-#define TEMP_SENSOR_BED 11
+#define TEMP_SENSOR_BED 1
 #define TEMP_SENSOR_CHAMBER 0
 
 // Dummy thermistor constant temperature readings, for use with 998 and 999
@@ -413,7 +413,7 @@
  * heater. If your configuration is significantly different than this and you don't understand
  * the issues involved, don't use bed PID until someone else verifies that your hardware works.
  */
-#define PIDTEMPBED
+// #define PIDTEMPBED
 
 //#define BED_LIMIT_SWITCHING
 
@@ -481,7 +481,7 @@
  */
 
 #define THERMAL_PROTECTION_HOTENDS // Enable thermal protection for all extruders
-//#define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated bed
+#define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated bed
 
 //===========================================================================
 //============================= Mechanical Settings =========================
@@ -608,7 +608,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 1600, 100 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 76.1904, 79.20792, 1600, 100 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1086,8 +1086,10 @@
 #if ENABLED(AUTO_BED_LEVELING_3POINT) || ENABLED(AUTO_BED_LEVELING_UBL)
   //#define PROBE_PT_1_X 15
   //#define PROBE_PT_1_Y 180
+
   //#define PROBE_PT_2_X 15
   //#define PROBE_PT_2_Y 20
+  
   //#define PROBE_PT_3_X 170
   //#define PROBE_PT_3_Y 20
 #endif
